@@ -6,8 +6,10 @@ import java.awt.event.*;
 public class DodgeMaster implements ActionListener, KeyListener {
 
 	// Properties
-	JFrame frame;
-	DodgeMasterPanel panel;
+	JFrame frame = new JFrame("Dodge Master - James Cahyadi");;
+	DodgeMasterPanel panel = new DodgeMasterPanel();
+	JButton playAgain = new JButton("Play Again");
+	JButton quit = new JButton("Quit"); 
 	Timer timer;
 
 	// Methods
@@ -15,6 +17,37 @@ public class DodgeMaster implements ActionListener, KeyListener {
 		if(evt.getSource() == timer) {
 			panel.repaint();
 		}
+
+		if(panel.gameOver) {
+			playAgain.setSize(200,50);
+			playAgain.setLocation(520,600);
+			playAgain.addActionListener(this);
+			panel.add(playAgain);
+			
+			quit.setSize(100,50);
+			quit.setLocation(1180, 670);
+			quit.addActionListener(this);
+			panel.add(quit);
+		}
+		
+		if(evt.getSource() == playAgain) {
+			panel.remove(playAgain);
+			panel.remove(quit);
+			panel.gameOver = false;
+			panel.playerX = panel.ZONE_X + (int) panel.ZONE_WIDTH/2 - (int) panel.PLAYER_WIDTH/2;
+			panel.playerY = panel.ZONE_Y + (int) panel.ZONE_HEIGHT/2 - (int) panel.PLAYER_HEIGHT/2;
+			panel.playerVel = 2; 
+			panel.points = 0;
+			panel.f.newX();
+			panel.f.newY();
+			frame.requestFocus(); 
+		}
+		
+		if(evt.getSource() == quit) {
+			System.exit(0);
+		}
+		
+
 	}
 
 	public void keyReleased(KeyEvent evt) {
@@ -50,21 +83,14 @@ public class DodgeMaster implements ActionListener, KeyListener {
 			panel.playerDown = true;
 			break;
 		}
-
 	}
 
-	public void keyTyped(KeyEvent evt) {
-
-	}
-
-
+	public void keyTyped(KeyEvent evt) {}
 
 	// Constructor
 	public DodgeMaster() {
-		frame = new JFrame("Dodge Master - James Cahyadi");
-		panel = new DodgeMasterPanel();
 		panel.setLayout(null);
-		panel.setPreferredSize(new Dimension(1280, 600));
+		panel.setPreferredSize(new Dimension(1280, 720));
 
 		frame.addKeyListener(this);
 
