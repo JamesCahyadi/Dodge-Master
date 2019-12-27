@@ -54,5 +54,4 @@ public class Food {
 		return playerX + playerWidth > this.foodX && playerX + playerWidth < this.foodX + this.FOOD_WIDTH 
 				&& playerY + playerHeight > this.foodY && playerY + playerHeight < this.foodY + this.FOOD_HEIGHT;
 	}
-
 }

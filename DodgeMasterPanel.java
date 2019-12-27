@@ -105,13 +105,11 @@ public class DodgeMasterPanel extends JPanel{
 				gameOver= true;
 				playerVel = 0;
 			}
-
 		}
 
 		// Score
 		g.setColor(Color.WHITE);
 		g.drawString(points+"", ZONE_X + 3, ZONE_Y + 10);
-
 	}
 
 	// Constructor
@@ -121,9 +119,5 @@ public class DodgeMasterPanel extends JPanel{
 		for(int i = 0; i < bouncingBlocks.length; i++) {
 			bouncingBlocks[i] = new Block();
 		}
-
-
-
 	}
-
 }

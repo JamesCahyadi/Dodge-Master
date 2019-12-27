@@ -46,8 +46,6 @@ public class DodgeMaster implements ActionListener, KeyListener {
 		if(evt.getSource() == quit) {
 			System.exit(0);
 		}
-		
-
 	}
 
 	public void keyReleased(KeyEvent evt) {
@@ -65,7 +63,6 @@ public class DodgeMaster implements ActionListener, KeyListener {
 			panel.playerDown = false;
 			break;
 		}
-
 	}
 
 	public void keyPressed(KeyEvent evt) {
@@ -93,7 +90,6 @@ public class DodgeMaster implements ActionListener, KeyListener {
 		panel.setPreferredSize(new Dimension(1280, 720));
 
 		frame.addKeyListener(this);
-
 		frame.setContentPane(panel);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();

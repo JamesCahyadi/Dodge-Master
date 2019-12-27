@@ -73,7 +73,7 @@ public class Block {
 						&& this.blockY + this.BLOCK_HEIGHT >= ZONE_Y && this.blockY + this.BLOCK_HEIGHT <= ZONE_Y + ZONE_HEIGHT); // block bottom right corner
 	}
 
-	// Check if top left and right corners of block hit the top edge of safe zone, respectively
+	// Check if top left and right corners of block hit the bottom edge of safe zone, respectively
 	public boolean bottomEdgeZone(int ZONE_X, int ZONE_Y, int ZONE_WIDTH, int ZONE_HEIGHT) {
 		return (this.blockX > ZONE_X && this.blockX < ZONE_X + ZONE_WIDTH
 				&& this.blockY >= ZONE_Y && this.blockY <= ZONE_Y + ZONE_HEIGHT) // block top left corner
@@ -89,9 +89,9 @@ public class Block {
 				&& this.blockX <= ZONE_X + ZONE_WIDTH && this.blockX >= ZONE_X); // block bottom left corner
 	}
 
-	// Check if top right and bottom right corner of block hit the right edge of safe zone, respectively
+	// Check if top right and bottom right corner of block hit the left edge of safe zone, respectively
 	public boolean leftEdgeZone(int ZONE_X, int ZONE_Y, int ZONE_WIDTH, int ZONE_HEIGHT) {
-		return (this.blockY > ZONE_Y && this.blockY < ZONE_Y + ZONE_HEIGHT 
+		return (this.blockY >= ZONE_Y && this.blockY <= ZONE_Y + ZONE_HEIGHT 
 				&& this.blockX + this.BLOCK_WIDTH <= ZONE_X + ZONE_WIDTH && this.blockX + this.BLOCK_WIDTH >= ZONE_X) // block top right corner
 				|| (this.blockY + this.BLOCK_HEIGHT >= ZONE_Y && this.blockY + this.BLOCK_HEIGHT <= ZONE_Y + ZONE_HEIGHT
 				&& this.blockX + this.BLOCK_WIDTH <= ZONE_X + ZONE_WIDTH && this.blockX + this.BLOCK_WIDTH  >= ZONE_X); // block top right corner
@@ -121,6 +121,4 @@ public class Block {
 		return playerX + playerWidth > this.blockX && playerX + playerWidth < this.blockX + this.BLOCK_WIDTH 
 				&& playerY + playerHeight > this.blockY && playerY + playerHeight < this.blockY + this.BLOCK_HEIGHT;
 	}
-
-
 }
