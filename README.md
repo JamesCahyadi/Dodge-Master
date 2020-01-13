@@ -1,9 +1,8 @@
 # Dodge Master
 
-Dodge Master is an endless dodging game, made to test one's dodging abilities. 
-
 ### Game Information
-In order to play the game, just download the DodgeMaster.jar file
+Dodge Master is an endless dodging game, made to test one's dodging abilities. 
+In order to play the game, download the DodgeMaster.jar file.
 
 #### Gameplay
 ![dodge](https://user-images.githubusercontent.com/45665593/72234839-e9afbc00-359c-11ea-960a-61639a03470b.gif)
